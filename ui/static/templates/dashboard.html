@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Customer Churn Dashboard</h1>
+    <div class="container">
+        <h2>Key Metrics</h2>
+        <ul>
+            <li><strong>Total Customers:</strong> {{ metrics.total_customers }}</li>
+            <li><strong>Churn Rate:</strong> {{ metrics.churn_rate }}%</li>
+            <li><strong>Average Monthly Charges:</strong> ${{ metrics.avg_monthly_charges }}</li>
+            <li><strong>Average Tenure:</strong> {{ metrics.avg_tenure }} months</li>
+        </ul>
+
+        <h2>Visualizations</h2>
+        <img src="{{ url_for('static', filename='images/churn_distribution.png') }}" alt="Churn Distribution">
+    </div>
+</body>
+</html>
